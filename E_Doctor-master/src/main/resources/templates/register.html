@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+            <h3>Create Your New Profile Here</h3>
+            <p>Already Have an Account?</p>
+            <a href="/login" class="loginbtn">Login here</a>
+        </div>
+        <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="true">User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="doctor-tab" data-toggle="tab" href="#doctor" role="tab" aria-controls="doctor" aria-selected="false">Doctor</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <!-- User Registration Tab -->
+                <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
+                    <h3 class="register-heading">User Registration</h3>
+                    <form th:action="@{/registerUser}" method="post">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Username *" name="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Gender *" name="gender" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="Age *" name="age" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password *" name="password" required>
+                                    <small class="form-text text-muted">At least one uppercase, numeric digit, lowercase, special character, length of 6-20</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email Address *" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Mobile *" name="mobile" maxlength="10" minlength="10" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Address *" name="address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password *" name="confirmPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="terms" required> I agree to all Terms & Conditions</label>
+                        </div>
+                        <button type="submit" class="btnRegister">Register</button>
+                    </form>
+                </div>
+
+                <!-- Doctor Registration Tab -->
+                <div class="tab-pane fade" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
+                    <h3 class="register-heading">Doctor Registration</h3>
+                    <form th:action="@{/registerDoctor}" method="post">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Doctor Name *" name="doctorname" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email Address *" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Gender *" name="gender" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Mobile *" name="mobile" maxlength="10" minlength="10" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password *" name="password" required>
+                                    <small class="form-text text-muted">At least one uppercase, numeric digit, lowercase, special character, length of 6-20</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Specialization *" name="specialization" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="Years of Experience *" name="experience" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Previous Hospital *" name="previoushospital" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Address *" name="address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password *" name="confirmPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="terms" required> I agree to all Terms & Conditions</label>
+                        </div>
+                        <button type="submit" class="btnRegister">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
